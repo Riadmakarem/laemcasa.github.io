@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { instagramLink, nav, site, whatsappLink } from "@/lib/site";
+import { instagramLink, nav, site, whatsappLink, withBase } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
 
           <nav className="footer-links">
             {nav.map((item) => (
-              <a key={item.href} href={item.href}>
+              <a key={item.href} href={withBase(item.href)}>
                 {item.label}
               </a>
             ))}

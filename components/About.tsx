@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 import { owners } from "@/lib/data";
+import { withBase } from "@/lib/site";
 
 export default function About() {
   return (
@@ -40,7 +41,7 @@ export default function About() {
         <p className="about-sign">Com carinho, Ângela &amp; Marcela</p>
 
         <div className="about-cta">
-          <a href="/sobrenos" className="btn btn-dark">
+          <a href={withBase("/sobrenos")} className="btn btn-dark">
             Conheça nossa história
           </a>
         </div>

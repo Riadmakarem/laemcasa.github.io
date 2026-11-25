@@ -20,6 +20,14 @@ export const nav = [
   { href: "/seu-evento", label: "Seu evento" },
 ] as const;
 
+// Prefixo do GitHub Pages (ex.: "/laemcasa.github.io"); vazio em desenvolvimento.
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+// Para <a href> e URLs montadas à mão: o basePath só é aplicado pelo <Link>.
+export function withBase(path: string) {
+  return path.startsWith("/") ? `${basePath}${path}` : path;
+}
+
 export function whatsappLink(message?: string) {
   const base = `https://wa.me/${site.whatsapp}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;

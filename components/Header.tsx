@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { nav, site, whatsappLink } from "@/lib/site";
+import { nav, site, whatsappLink, withBase } from "@/lib/site";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,7 +52,7 @@ export default function Header() {
   return (
     <header className={`header ${solid ? "scrolled" : ""}`}>
       <div className="container header-inner">
-        <a href="/" className="brand" aria-label={`${site.name} — início`}>
+        <a href={withBase("/")} className="brand" aria-label={`${site.name} — início`}>
           <Image
             src="/logolaemcasa.png"
             alt={`Logo ${site.name}`}
@@ -69,7 +69,7 @@ export default function Header() {
 
         <nav className={`nav ${open ? "open" : ""}`} onClick={() => setOpen(false)}>
           {nav.map((item) => (
-            <a key={item.href} href={item.href}>
+            <a key={item.href} href={withBase(item.href)}>
               {item.label}
             </a>
           ))}

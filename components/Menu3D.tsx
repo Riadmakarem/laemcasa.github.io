@@ -7,12 +7,12 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { menu, type MenuItem } from "@/lib/data";
 import { buildDishModel, disposeModel } from "@/lib/ar-models";
-import { whatsappLink } from "@/lib/site";
+import { whatsappLink, withBase } from "@/lib/site";
 
 // Arquivos gerados para o reconhecimento das fotos (ver scripts/compile-ar-targets.cjs).
-const MINDAR_URL = "/ar/mindar/mindar-image.prod.js";
-const TARGETS_URL = "/ar/targets.mind";
-const TARGETS_INDEX_URL = "/ar/targets.json";
+const MINDAR_URL = withBase("/ar/mindar/mindar-image.prod.js");
+const TARGETS_URL = withBase("/ar/targets.mind");
+const TARGETS_INDEX_URL = withBase("/ar/targets.json");
 
 type Mode = "preview" | "scan";
 type ScanStatus = "idle" | "loading" | "scanning" | "found" | "error";
