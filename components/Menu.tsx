@@ -31,6 +31,12 @@ export default function Menu() {
           </p>
         </div>
 
+        <div className="menu-3d-link">
+          <Link href="/cardapio/3d" className="btn btn-dark">
+            Ver cardápio em 3D / câmera
+          </Link>
+        </div>
+
         <div className="menu-filters" role="tablist" aria-label="Categorias do cardápio">
           {menuCategories.map((c) => (
             <button

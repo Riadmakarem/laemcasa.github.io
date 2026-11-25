@@ -2153,3 +2153,161 @@ img {
     border-radius: 16px;
   }
 }
+/* ---------- Cardápio 3D / AR ---------- */
+.m3d-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.m3d-view {
+  position: relative;
+  border-radius: var(--raio);
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, var(--creme-2), var(--areia));
+  box-shadow: var(--sombra);
+}
+
+.m3d-stage {
+  position: relative;
+  width: 100%;
+  height: min(70vh, 560px);
+  touch-action: none;
+  cursor: grab;
+}
+
+.m3d-stage canvas {
+  display: block;
+}
+
+.m3d-scan {
+  background: var(--preto);
+  overflow: hidden;
+  cursor: default;
+}
+
+.m3d-video,
+.m3d-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.m3d-video {
+  object-fit: cover;
+}
+
+.m3d-overlay {
+  position: absolute;
+  inset: auto 16px 16px;
+  z-index: 2;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(15, 14, 13, 0.72);
+  color: var(--creme);
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+}
+
+.m3d-hint::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + min(10vh, 80px));
+  width: min(55vw, 240px);
+  aspect-ratio: 4 / 5;
+  transform: translateX(-50%);
+  border: 3px dashed rgba(247, 240, 228, 0.8);
+  border-radius: 14px;
+  animation: m3d-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes m3d-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.m3d-error {
+  inset: 50% 16px auto;
+  transform: translateY(-50%);
+  background: var(--terracota-escuro);
+}
+
+.m3d-info {
+  background: var(--creme-2);
+  border: 1px solid var(--areia);
+  border-radius: var(--raio);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.m3d-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+}
+
+.m3d-info p {
+  color: var(--marrom-suave);
+}
+
+.m3d-muted {
+  font-style: italic;
+}
+
+.m3d-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.m3d-picker {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 18px 2px 6px;
+  scroll-snap-type: x mandatory;
+}
+
+.m3d-thumb {
+  flex: 0 0 72px;
+  height: 72px;
+  padding: 0;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  scroll-snap-align: start;
+  background: var(--areia);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.m3d-thumb:hover {
+  transform: translateY(-2px);
+}
+
+.m3d-thumb.is-active {
+  border-color: var(--terracota);
+}
+
+.menu-3d-link {
+  display: flex;
+  justify-content: center;
+  margin: -8px 0 26px;
+}
+
+@media (max-width: 900px) {
+  .m3d-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .m3d-stage {
+    height: 62vh;
+  }
+}

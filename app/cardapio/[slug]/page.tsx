@@ -91,6 +91,10 @@ export default async function MenuItemPage({
               porções e a montagem são combinadas de acordo com o seu evento.
             </p>
 
+            <Link href={`/cardapio/3d?item=${item.slug}`} className="btn btn-ghost">
+              Ver em 3D
+            </Link>
+
             <OrderPanel itemTitle={item.title} />
 
             <div className="detail-calc-hint">
