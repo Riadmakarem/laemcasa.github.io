@@ -392,6 +392,16 @@ export const menu: MenuItem[] = [
     idealFor: ["Recepções", "Aniversários", "Confraternizações"],
     model: "/modelos/tabua-frios-frutas-premium.glb",
   },
+  {
+    slug: "taca-morangos-docinhos",
+    src: "/fotos/483536304_1200612572026157_6500900823022306074_n.jpg",
+    title: "Taça de morangos com docinhos",
+    cats: ["sobremesas"],
+    description:
+      "Taça de sobremesa com creme, camada de morango, morangos frescos por cima e docinhos artesanais. Uma peça que encanta na mesa de doces.",
+    idealFor: ["Aniversários", "Chás", "Mesa de doces"],
+    model: "/modelos/taca-morangos-docinhos.glb",
+  },
 ];
 
 export function getMenuItem(slug: string): MenuItem | undefined {
