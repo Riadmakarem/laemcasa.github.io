@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: `Cardápio 3D - ${site.name}`,
   description:
-    "Veja os pratos do Lá em Casa em 3D e use a câmera do celular para escanear as fotos do cardápio em realidade aumentada.",
+    "Veja os pratos do Lá em Casa em 3D e, pelo celular, coloque o prato em tamanho real sobre a sua mesa com realidade aumentada.",
 };
 
 export default function Cardapio3DPage() {

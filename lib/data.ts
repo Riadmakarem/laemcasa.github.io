@@ -43,6 +43,8 @@ export type MenuItem = {
   cats: MenuCategory[];
   description: string;
   idealFor: string[];
+  // Modelo 3D (GLB em /public/modelos) usado no cardápio 3D e no AR.
+  model?: string;
 };
 
 // Todas as fotos reais, categorizadas e descritas para o cardápio interativo.
@@ -379,6 +381,16 @@ export const menu: MenuItem[] = [
     description:
       "Um panorama do nosso finger food: canapés, mini burgers, taças, tábuas e mesas montadas com o capricho que é a nossa marca.",
     idealFor: ["Inspiração", "Festas", "Eventos"],
+  },
+  {
+    slug: "tabua-frios-frutas-premium",
+    src: "/fotos/484018228_1200794628674618_5842321264682682776_n.jpg",
+    title: "Tábua premium de frios & frutas",
+    cats: ["boxes", "buffet"],
+    description:
+      "Tábua redonda farta com presunto parma, salame, peito de peru, queijos variados (brie, gorgonzola, gouda e provolone), pitaya, morangos, uvas, kiwi, damascos, castanhas e alecrim.",
+    idealFor: ["Recepções", "Aniversários", "Confraternizações"],
+    model: "/modelos/tabua-frios-frutas-premium.glb",
   },
 ];
 

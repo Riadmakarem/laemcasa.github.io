@@ -33,7 +33,7 @@ export default function Menu() {
 
         <div className="menu-3d-link">
           <Link href="/cardapio/3d" className="btn btn-dark">
-            Ver cardápio em 3D / câmera
+            Ver em 3D na sua mesa
           </Link>
         </div>
 
